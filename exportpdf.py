@@ -26,7 +26,13 @@ def export_to_pdf(values, filename="invoice.pdf"):
     # 2.1 Create auto-timestamped filename
     # ────────────────────────────────────────────
     now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    filename = filename.replace(".pdf", f"_{now}.pdf")
+
+    # ensure lowercase extension consistency
+    if filename.lower().endswith(".pdf"):
+        filename = filename[:-4]  # remove .pdf (only the last 4 chars)
+
+    # always add timestamp + .pdf
+    filename = f"{filename}_{now}.pdf"
 
     # ────────────────────────────────────────────
     # 2.2 Initialize PDF Document

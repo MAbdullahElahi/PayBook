@@ -149,8 +149,8 @@ while True:
 
     # Export to both formats
     elif option == opt[2]:
-        export_to_excel(values, input("Enter file name: "))
-        export_to_pdf(values, input("Enter file name: "))
+        export_to_excel(values, input("Enter file name for Excel: "))
+        export_to_pdf(values, input("Enter file name for PDF: "))
 
     # Edit existing details
     elif option == opt[3]:
